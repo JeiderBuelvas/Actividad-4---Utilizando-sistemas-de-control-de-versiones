@@ -1,0 +1,2345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<script src="../../../js/jquery-3.1.1.min.js"></script>
+	<script src="../../../js/timer.jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="../../../css/bootstrap.min.css">
+	<link rel="shortcut icon" href="img/logo.png">
+	<link rel="stylesheet" href="../css/AsignarConsola.css">
+
+	<title>Asignar Consola</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg d-flex justify-content-between">
+		<h2>Consolas</h2>
+	</nav>
+	<ul class="nav nav-tabs" id="myTab" role="tablist">
+		<li class="nav-item">
+			<a class="nav-link active" id="home-tab" data-toggle="tab" href="#xboxone" role="tab" aria-controls="home" aria-selected="true">Xbox one</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" id="profile-tab" data-toggle="tab" href="#xbox360" role="tab" aria-controls="profile" aria-selected="false">Xbox 360</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" id="contact-tab" data-toggle="tab" href="#xbox" role="tab" aria-controls="contact" aria-selected="false">Xbox</a>
+		</li>
+	</ul>
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade show active" id="xboxone" role="tabpanel" aria-labelledby="home-tab">
+			<div class="margen" style="width: 1150px; height: 495px;">
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXboxOne1">
+					<div class="tabla">
+						<div>
+							<h5>Consola #1</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox one.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXboxOne1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #1</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();										
+										},
+										format: '%H:%M:%S'  
+									});
+									
+								}
+								
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXboxOne2">
+					<div class="tabla2">
+						<div>
+							<h5>Consola #2</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox one.jpg" alt="">
+						</div>
+						<div>
+							<h5>Ocupada</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal Consola-->
+				<div class="modal fade" id="ConsolaXboxOne2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px;">Consola #2</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv2" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h2" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m2">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s2">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar2()">Empezar</button>
+										<!-- Button modal consumible -->
+										<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#CXOAgregarConsumible">Agregar consumible
+										</button>
+
+										<!-- Modal consumible -->
+										<div class="modal fade" id="CXOAgregarConsumible" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+											<div class="modal-dialog modal-dialog-centered" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLongTitle">Agregar consumible</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														
+														<form>
+															<div class="form-group">
+
+																<label for="CXOCodigoProducto">Ingrese el codigo del productro</label>
+																<input type="text" class="form-control" id="CXOregistrarConsumible2" aria-describedby="emailHelp" placeholder="Codigo cansumible">
+																<label for="CXO2CantidadConsumible">Ingrese la cantidad del productro</label>
+																<input class="form-control" type="number" id="CXO2CantidadConsumible" value="0" min="0" max="100">
+															</div>
+														</form>
+
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+														<button type="button" class="btn btn-primary"data-dismiss="modal">Confirmar</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3");
+
+								function empezar2(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv2').timer('remove');
+									$('#timerDiv2').timer({
+										countdown: true,
+										duration: $('#h2').val()+"h"+$('#m2').val()+"m"+$('#s2').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();
+										},
+										format: '%H:%M:%S'  
+									});
+								}
+								function pausar(){
+									audio.pause();
+								}
+								
+							</script>
+
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+								<!-- Button modal finlizar servicio -->
+								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#CXO1finalizarServicio" onclick="pausar()">
+									Realizar cobro
+								</button>
+
+								<!-- Modal finalizar servicio -->
+								<div class="modal fade" id="CXO1finalizarServicio" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="finalizarServicio">Registrar pago</h5>
+												
+											</div>
+											<div class="modal-body">
+												<form>
+													<div class="form-group">
+														<h4>El cobro total es de $3500 (dos mil quinientos pesos)</h4>
+														<h6>
+															Tiempo jugado: $2000
+														</h6>
+														<h6>
+															Helado: $300
+														</h6>
+														<h6>
+															Choclitos: $800
+														</h6>
+														<h6>
+															Gomitas: $400
+														</h6>
+														<h6>
+															Puntos totales ganados: 2 puntos 
+														</h6>
+														<label for="Fnickname1">Nickname</label>
+														<input type="text" class="form-control" id="Fnickname1" aria-describedby="emailHelp" placeholder="Ingrese el nickname">
+														<label for="codigocliente1">Codigo cliente</label>
+														<input type="text" class="form-control" id="codigocliente1" aria-describedby="emailHelp" placeholder="Ingrese el codigo">
+														<div class="form-group" style="margin-top: 20px;">
+															<div class="form-check">
+																<input class="form-check-input" type="checkbox" id="gridCheck">
+																<label class="form-check-label" for="gridCheck"> 
+																	Cliente sin cuenta
+																</label>
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+												<button type="sumbit" class="btn btn-danger"data-dismiss="modal">Finalizar Servicio</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXboxOne3">
+					<div class="tabla">
+						<div>
+							<h5>Consola #3</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox one.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXboxOne3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #3</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar3()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar3(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();										
+										},
+										format: '%H:%M:%S'  
+									});
+									
+								}
+								
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXboxOne4">
+					<div class="tabla">
+						<div>
+							<h5>Consola #4</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox one.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXboxOne4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #4</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar4()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar4(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();										
+										},
+										format: '%H:%M:%S'  
+									});
+									
+								}
+								
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXboxOne5">
+					<div class="tabla">
+						<div>
+							<h5>Consola #5</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox one.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXboxOne5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #5</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar5()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar5(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();										
+										},
+										format: '%H:%M:%S'  
+									});
+									
+								}
+								
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXboxOne6">
+					<div class="tabla">
+						<div>
+							<h5>Consola #6</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox one.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXboxOne6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #6</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar6()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar6(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();										
+										},
+										format: '%H:%M:%S'  
+									});
+									
+								}
+								
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXboxOne7">
+					<div class="tabla">
+						<div>
+							<h5>Consola #7</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox one.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXboxOne7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #7</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar7()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar7(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();										
+										},
+										format: '%H:%M:%S'  
+									});
+									
+								}
+								
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="tab-pane fade" id="xbox360" role="tabpanel" aria-labelledby="home-tab">
+			<div class="" style="width: 1150px; height: 495px;">
+				
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox3601">
+					<div class="tabla2">
+						<div>
+							<h5>Consola #1</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Ocupada</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal Consola-->
+				<div class="modal fade" id="ConsolaXbox3601" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px;">Consola #1</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv2" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h2" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m2">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s2">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar3601()">Empezar</button>
+										<!-- Button modal consumible -->
+										<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#CX360AgregarConsumible">Agrgar consumible
+										</button>
+
+										<!-- Modal consumible -->
+										<div class="modal fade" id="CX360AgregarConsumible" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+											<div class="modal-dialog modal-dialog-centered" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLongTitle">Agregar consumible</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														
+														<form>
+															<div class="form-group">
+
+																<label for="CX360CodigoProducto">Ingrese el codigo del productro</label>
+																<input type="text" class="form-control" id="CX360registrarConsumible1" aria-describedby="emailHelp" placeholder="Codigo cansumible">
+																<label for="CX3602CantidadConsumible">Ingrese la cantidad del productro</label>
+																<input class="form-control" type="number" id="CX360CantidadConsumible1" value="0" min="0" max="100">
+															</div>
+														</form>
+
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+														<button type="button" class="btn btn-primary"data-dismiss="modal">Confirmar</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3");
+
+								function empezar3601(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv2').timer('remove');
+									$('#timerDiv2').timer({
+										countdown: true,
+										duration: $('#h2').val()+"h"+$('#m2').val()+"m"+$('#s2').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();
+										},
+										format: '%H:%M:%S'  
+									});
+								}
+								function pausar(){
+									audio.pause();
+								}
+								
+							</script>
+
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+								<!-- Button modal finlizar servicio -->
+								<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#CX360finalizarServicio" onclick="pausar()">
+									Realizar cobro
+								</button>
+
+								<!-- Modal finalizar servicio -->
+								<div class="modal fade" id="CX360finalizarServicio" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="finalizarServicio">Registrar pago</h5>
+												
+											</div>
+											<div class="modal-body">
+												<form>
+													<div class="form-group">
+														<h4>El cobro total es de $2500 (dos mil quinientos pesos)</h4>
+														<h6>
+															Tiempo jugado: $1400
+														</h6>
+														<h6>
+															Helado: $300
+														</h6>
+														<h6>
+															Galletas Chokis: $800
+														</h6>
+														<h6>
+															Puntos totales ganados: 2 puntos 
+														</h6>
+														<label for="Fnickname1">Nickname</label>
+														<input type="text" class="form-control" id="Fnickname1" aria-describedby="emailHelp" placeholder="Ingrese el nickname">
+														<label for="codigocliente1">Codigo cliente</label>
+														<input type="text" class="form-control" id="codigocliente1" aria-describedby="emailHelp" placeholder="Ingrese el codigo">
+														<div class="form-group" style="margin-top: 20px;">
+															<div class="form-check">
+																<input class="form-check-input" type="checkbox" id="gridCheck">
+																<label class="form-check-label" for="gridCheck"> 
+																	Cliente sin cuenta
+																</label>
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+												<button type="sumbit" class="btn btn-danger"data-dismiss="modal">Finalizar Servicio</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox3602">
+					<div class="tabla">
+						<div>
+							<h5>Consola #2</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox3602" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #2</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar3602()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar3602(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();										
+										},
+										format: '%H:%M:%S'  
+									});
+									
+								}
+								
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox3603">
+					<div class="tabla">
+						<div>
+							<h5>Consola #3</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox3603" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #3</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar3603()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar3603(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox3604">
+					<div class="tabla">
+						<div>
+							<h5>Consola #4</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox3604" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #4</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar3604()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar3604(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox3605">
+					<div class="tabla">
+						<div>
+							<h5>Consola #5</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox3605" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #5</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar3605()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar3605(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox3606">
+					<div class="tabla">
+						<div>
+							<h5>Consola #6</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox3606" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #6</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar3606()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar3606(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox3607">
+					<div class="tabla">
+						<div>
+							<h5>Consola #7</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox3607" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #7</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar3607()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar3607(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox3608">
+					<div class="tabla">
+						<div>
+							<h5>Consola #8</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox3608" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #8</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar3608()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar3608(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox3609">
+					<div class="tabla">
+						<div>
+							<h5>Consola #9</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox3609" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #9</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar3609()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar3609(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox36010">
+					<div class="tabla">
+						<div>
+							<h5>Consola #10</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox36010" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #10</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar36010()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar36010(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox36011">
+					<div class="tabla">
+						<div>
+							<h5>Consola #11</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox36011" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #11</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar36011()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar36011(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXbox36012">
+					<div class="tabla">
+						<div>
+							<h5>Consola #12</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox 360.jpg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXbox36012" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #12</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezar36012()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezar36012(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<div class="tab-pane fade" id="xbox" role="tabpanel" aria-labelledby="contact-tab">
+			<div class="" style="width: 1150px; height: 495px;">
+				
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXboxN1">
+					<div class="tabla">
+						<div>
+							<h5>Consola #1</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox.jpeg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXboxN1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #1</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezarN1()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezarN1(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXboxN2">
+					<div class="tabla">
+						<div>
+							<h5>Consola #2</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox.jpeg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXboxN2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #2</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezarN2()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezarN2(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--ventana emergente-->
+				<button type="button" class="btn" data-toggle="modal" data-target="#ConsolaXboxN3">
+					<div class="tabla">
+						<div>
+							<h5>Consola #3</h5>
+						</div>
+						<div class="consola">
+							<img src="../../../img/xbox.jpeg" alt="">
+						</div>
+						<div>
+							<h5>Libre</h5>
+						</div>
+					</div>
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="ConsolaXboxN3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content" >
+							<div class="modal-header" style="width: 500px; height:50px;" >
+								<h5 class="modal-title" id="exampleModalCenterTitle" style="margin-top: -5px; text-align: center;">Consola #3</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<!--Temporizador-->
+								<div class="container-fluid" style="">
+									<div class="text-center" style="margin-top: -35px; height: 70px;">
+										<br/>
+										<h2>Temporizador</h2>
+									</div>
+
+									<div class="col-md-12 "style="text-align: center;">
+
+										<h1 id="timerDiv" style="margin-top: 15px;">00:00:00</h1>
+									</div>
+
+									<div class="row">
+										<div class="col-md-4 col-md-offset-4 d-flex flex-row" style="">
+
+											<div class="col-md-12" style="margin-left: 25px;">
+												Hora
+												<input class="form-control" type="number" id="h" value="0" min="0" max="60">
+											</div>
+											<div class="col-md-12">
+												Minutos
+												<input class="form-control" type="number" value="0" min="0" max="60" id="m">
+											</div>
+											<div class="col-md-12">
+												Segundos
+												<input  class="form-control" type="number" min="0" max="60" value="00" id="s">
+											</div>
+
+
+										</div>
+									</div>
+									<div class="col-md-14">
+										<br/>   
+										<button type="button" class="btn btn-success btn-lg btn-block" onclick="empezarN3()">Empezar</button>
+									</div> 
+
+								</div>
+							</div>
+
+							<script>
+								audio = new Audio("sound/../../../../sound/mario-bros game over.mp3"); 
+								function empezarN3(){
+									audio.pause();
+									audio.currentTime = 0;
+									$('#timerDiv').timer('remove');
+									$('#timerDiv').timer({
+										countdown: true,
+										duration: $('#h').val()+"h"+$('#m').val()+"m"+$('#s').val()+'s',     
+										callback: function() {  
+											audio.addEventListener('ended', function() {
+												this.currentTime = 0;
+												this.play();
+											}, false);
+											audio.play();		
+										},
+										format: '%H:%M:%S'  
+									});	
+								}					
+							</script>			
+							<div class="modal-footer">
+
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

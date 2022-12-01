@@ -1,0 +1,67 @@
+.contenedor{
+	width: 99%;
+	max-width: 1380px;
+	margin: auto;
+	background: ;
+	height: 650px;
+}
+
+.navbar{
+	width: 15%:
+	height: 40px;
+	max-height: 200px;
+	border: 1px solid #D8D8D8;
+	
+}
+ol{
+	margin-top: 15px;
+}
+
+.margen{
+	padding: 40px;
+}
+
+
+
+
+.tabla {
+	background:#00CD2A;
+	width: 150px;
+	height: 200px;
+	color: #fff;
+	text-align: center;
+	border-radius: 10px;
+	cursor: pointer;
+	overflow: hidden;
+	transition: .5s;
+	margin-bottom: 10px;
+}
+
+.tabla2 { /*Tabla de las consolas ocupadas*/
+	background:#F3101E;
+	width: 150px;
+	height: 200px;
+	color: #fff;
+	text-align: center;
+	border-radius: 10px;
+	cursor: pointer;
+	overflow: hidden;
+	transition: .5s;
+	margin-bottom: 10px;
+}
+
+
+.tabla:hover {
+	transform: scale(1.10);
+}
+.tabla2:hover {
+	transform: scale(1.10);
+}
+h5{
+	margin-top: 10px;
+}
+
+.consola img{
+	width: 150px;
+	height: 105px;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<title>Cliente</title>
+</head>
+<body>
+	<!-- contenedor principal -->
+	
+	<!-- encabezado de la pagian -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">
+			<img src="img/logo.png" width="60" height="40" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse mt-2" id="navbarNavDropdown">
+			<ul class="navbar-nav ml-auto p-2 bd-highlight ">
+				<li class="nav-item active pr-2">
+					<!-- botones de la parte superior -->
+					<a href="index.html"class="nav-link btn btn-outline-success">Inicio<span class="sr-only "></span></a>
+				</li>
+				<li class="nav-item pr-2">
+					<a class="nav-link btn btn-outline-success" href="reservas.html"  target="ventana_iframe">Reservas</a>
+				</li>
+
+				<li class="nav-item dropdown pr-2">
+					<a class="nav-link dropdown-toggle btn btn-outline-success" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Eventos
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" target="ventana_iframe" href="../Cliente/torneoscliente.html">Torneos</a>
+						<a class="dropdown-item" href="promocionescliente.html" target="ventana_iframe">Promociones</a>
+
+					</div>
+				</li>				
+				<li class="nav-item dropdown pr-2">
+					<a class="nav-link dropdown-toggle btn btn-outline-success" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Perfil
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="../Cliente/perfilcliente.html" target="ventana_iframe">Visualizar perfil</a>
+						<a href="../../Inicio.html"class="nav-link btn btn-outline-success">Cerrar Sesion<span class="sr-only ">(current)</span></a>
+
+					</div>
+				</li>
+
+				<img src="img/img11.jpg" width="50px" height="50px" alt="..." class="img-circle pt-0 d-none d-md-block" style="border-radius: 50%">
+			</ul>
+		</div>
+	</nav>
+	<div style="text-align:center;" class="border border-success">
+		<iframe src="../../SI/Cliente/iniciocliente.html" name="ventana_iframe" width="100%" height="560" id="ventana" frameborder="0" ></iframe>
+	</div>
+	<!-- tarjetas de los torneos -->
+	
+	<!-- tarjetas de prueba-->
+	 
+	
+
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="js/bootstrap.js"></script> 
+</body>
+</html>
